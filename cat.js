@@ -1,11 +1,11 @@
 const fs = require("fs")
 
-module.exports = function(file) {
+module.exports = function(done, file) {
   fs.readFile(`${file}`, "utf8", (err, content)=>{
     if(err){
-      throw err
+      done(err)
     }else{
-      process.stdout.write(content)
+      done(content)
     }
   })
 }

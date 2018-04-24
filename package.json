@@ -1,0 +1,22 @@
+{
+  "name": "pairexercise.nodeshell",
+  "version": "1.0.0",
+  "description": "A JS simulation of a CLI",
+  "main": "bash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpencerWhitehead7/PairExercise.NodeShell.git"
+  },
+  "author": "Spencer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpencerWhitehead7/PairExercise.NodeShell/issues"
+  },
+  "homepage": "https://github.com/SpencerWhitehead7/PairExercise.NodeShell#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
+}
