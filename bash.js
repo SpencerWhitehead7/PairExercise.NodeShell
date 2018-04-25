@@ -1,9 +1,9 @@
-const pwd = require("./pwd.js")
-const ls = require("./ls.js")
-const cat = require("./cat.js")
-const curl = require("./curl.js")
+const pwd = require("./pwd")
+const ls = require("./ls")
+const cat = require("./cat")
+const curl = require("./curl")
 
-const done = (output)=>{
+const done = output=>{
   process.stdout.write(output)
   process.stdout.write("\nprompt > ")
 }
@@ -13,15 +13,20 @@ process.stdin.on('data', (data) => {
   const input = data.toString().trim().split(" ")
   const command = input[0]
   const args = input.slice(1)
-  if(command === "pwd"){
+  switch(command){
+  case "pwd":
     pwd(done)
-  }else if(command === "ls"){
+    break
+  case "ls":
     ls(done)
-  }else if(command === "cat"){
+    break
+  case "cat":
     cat(done, args[0])
-  }else if(command === "curl"){
+    break
+  case "curl":
     curl(done, args[0])
-  }else{
+    break
+  default:
     process.stdout.write("Sorry, we don't support that one.")
     process.stdout.write("\nprompt > ")
   }

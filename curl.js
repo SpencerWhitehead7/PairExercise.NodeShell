@@ -1,11 +1,7 @@
 const request = require("request")
 
-module.exports = function(done, url) {
-  request.get(url, (error, response, body)=>{
-    if(error){
-      done(error)
-    }else{
-      done(body)
-    }
+module.exports = (done, url)=>{
+  request.get(url, (err, response, body)=>{
+    err ? done(err) : done(body)
   })
 }
